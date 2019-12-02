@@ -1,5 +1,6 @@
 import { Component, AfterViewInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-events',
@@ -8,7 +9,7 @@ import { Observable } from 'rxjs';
 })
 export class EventsComponent implements AfterViewInit  {
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
 
   fromEvent(target: HTMLInputElement, eventName: string) {
@@ -25,6 +26,12 @@ export class EventsComponent implements AfterViewInit  {
 
 
   ngAfterViewInit() {
+
+    // get navigation route
+    this.activatedRoute.url.subscribe(url => console.log('The URL changed to: ' + url));
+    
+
+
     const ESC_KEY = 27;
     const nameInput = document.getElementById('yourname') as HTMLInputElement;
     this.fromEvent(nameInput, 'keydown')

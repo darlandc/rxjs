@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-constructor',
@@ -8,27 +9,30 @@ import { Observable } from 'rxjs';
 })
 export class ConstructorComponent implements OnInit {
 
-  constructor() { }
+  constructor(private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
 
+    // get navigation route
+    this.activatedRoute.url.subscribe(url => console.log('The URL changed to: ' + url));
     
-function sequenceSubscriber(observer) {
-  observer.next('Apple');
-  observer.next('Orange');
-  observer.next('Grappe');
-  observer.complete();
+   
+  function sequenceSubscriber(observer) {
+    observer.next('Apple');
+    observer.next('Orange');
+    observer.next('Grappe');
+    observer.complete();
 
-  return {unsubscribe() {}};
-}
+    return {unsubscribe() {}};
+  }
 
-    const sequence = new Observable(sequenceSubscriber);
+      const sequence = new Observable(sequenceSubscriber);
 
-    sequence.subscribe({
-      next(msg) { console.log(msg); },
-      complete() { console.log('Finished sequence'); }
-    });
+      sequence.subscribe({
+        next(msg) { console.log(msg); },
+        complete() { console.log('Finished sequence'); }
+      });
 
-   }
+    }
 
 }

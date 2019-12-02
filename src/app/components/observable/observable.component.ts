@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable, of, throwError } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap, map } from 'rxjs/operators';
+import { NavigationStart } from '@angular/router';
 
 const httpOptions = {
   headers: new HttpHeaders({'Content-Type': 'application/json'})
@@ -16,6 +17,7 @@ const apiUrl = 'http://localhost:3000/api/v1/products';
 export class ObservableComponent implements OnInit {
 
   data: any[] = [];
+  navStart: Observable<NavigationStart>;
 
   constructor(private http: HttpClient) {
     this.getProducts()
@@ -56,6 +58,7 @@ export class ObservableComponent implements OnInit {
 
 
   ngOnInit() {
+    this.navStart.subscribe(evt => console.log('Navigation Started!'));
   }
 
 }

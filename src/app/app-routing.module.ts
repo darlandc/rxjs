@@ -7,6 +7,7 @@ import { EventsComponent } from './components/events/events.component';
 import { ObservableComponent } from './components/observable/observable.component';
 import { AcompComponent } from './components/acomp/acomp.component';
 import { BcompComponent } from './components/bcomp/bcomp.component';
+import { FormsComponent } from './components/forms/forms.component';
 
 const routes: Routes = [
   { path: 'constructor', component: ConstructorComponent },
@@ -14,7 +15,8 @@ const routes: Routes = [
   { path: 'observable', component: ObservableComponent },
   { path: 'subscribing', component: SubscribingComponent },
   { path: 'acomp', component: AcompComponent},
-  { path: 'bcomp', component: BcompComponent}
+  { path: 'bcomp', component: BcompComponent},
+  { path: 'form', component: FormsComponent}
 ];
 
 @NgModule({
