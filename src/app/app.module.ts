@@ -11,6 +11,8 @@ import { SubscribingComponent } from './components/subscribing/subscribing.compo
 import { ObservableComponent } from './components/observable/observable.component';
 import { MaterialModule } from './material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AcompComponent } from './components/acomp/acomp.component';
+import { BcompComponent } from './components/bcomp/bcomp.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     EventsComponent,
     ConstructorComponent,
     SubscribingComponent,
-    ObservableComponent
+    ObservableComponent,
+    AcompComponent,
+    BcompComponent
   ],
   imports: [
     BrowserModule,
