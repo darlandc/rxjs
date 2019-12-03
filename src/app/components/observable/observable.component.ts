@@ -33,7 +33,7 @@ export class ObservableComponent implements OnInit {
     return (error: any): Observable<T> => {
   
       // TODO: send the error to remote logging infrastructure
-      console.error(error, 'here is!'); // log to console instead
+      console.error(error, 'here is the error!'); // log to console instead
   
       // Let the app keep running by returning an empty result.
       return of(result as T);
@@ -46,14 +46,7 @@ export class ObservableComponent implements OnInit {
         tap(product => console.log('fetched products')),
         catchError(this.handleError('getProducts', []))
       );
-  }
-  
-  getProduct(id: number): Observable<any> {
-    const url = `${apiUrl}/${id}`;
-    return this.http.get<any>(url).pipe(
-      tap(_ => console.log(`fetched product id=${id}`)),
-      catchError(this.handleError<any>(`getProduct id=${id}`))
-    );
+
   }
 
 

@@ -5,12 +5,12 @@ import { Observable } from 'rxjs';
 import { filter } from 'rxjs/operators';
 
 @Component({
-  selector: 'app-acomp',
-  templateUrl: './acomp.component.html',
-  styleUrls: ['./acomp.component.sass']
+  selector: 'home',
+  templateUrl: './home.component.html',
+  styleUrls: ['./home.component.sass']
 })
 
-export class AcompComponent implements OnInit {
+export class HomeComponent implements OnInit {
 
   data: any;
   navStart: Observable<NavigationStart>;
@@ -22,7 +22,9 @@ export class AcompComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.navStart.subscribe(evt => console.log('Navigation Started!'));
+  //  this.navStart.subscribe(evt => console.log('Navigation Started!'));
+  console.clear();
+  
   }
 
 

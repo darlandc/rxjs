@@ -1,17 +1,4 @@
-<mat-menu #rootMenu="matMenu">
-    <button mat-menu-item routerLink="">Home</button>
-  <button mat-menu-item routerLink="/observable">Observable</button>
-  <button mat-menu-item routerLink="/constructor">Constructor</button>
-  <button mat-menu-item routerLink="/events">Events</button>
-  <button mat-menu-item routerLink="/subscribing">Subscribing</button>
-  <button mat-menu-item routerLink="/acomp">Acomp</button>
-  <button mat-menu-item routerLink="/bcomp">Bcomp</button>
-  <button mat-menu-item routerLink="/form">Form</button>
-
-</mat-menu>
-<button mat-icon-button [matMenuTriggerFor]="rootMenu">
-  <mat-icon>more_vert</mat-icon>
-</button>
+<nav-default></nav-default>
 
 <div class="content">
   <router-outlet></router-outlet>
