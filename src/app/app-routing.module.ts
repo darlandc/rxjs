@@ -10,6 +10,8 @@ import { ChildComponent } from './components/child/child.component';
 import { HomeComponent } from './components/home/home.component';
 import { ComponentsModule } from './components/components.module';
 import { HelloComponent } from './components/hello/hello.component';
+import { PairsComponent } from './components/pairs/pairs.component';
+import { AsyncComponent } from './components/async/async.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -19,8 +21,10 @@ const routes: Routes = [
   { path: 'subscribing', component: SubscribingComponent },
   { path: 'form', component: FormsComponent},
   { path: 'parent', component: ParentComponent},
+  { path: 'pairs', component: PairsComponent},
   { path: 'child', component: ChildComponent},
-  { path: 'hello', component: HelloComponent}
+  { path: 'hello', component: HelloComponent},
+  { path: 'async', component: AsyncComponent}
 ];
 
 @NgModule({

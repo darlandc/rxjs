@@ -12,6 +12,8 @@ import { ChildComponent } from './child/child.component';
 import { MaterialModule } from '../material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HelloComponent } from './hello/hello.component';
+import { PairsComponent } from './pairs/pairs.component';
+import { AsyncComponent } from './async/async.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { HelloComponent } from './hello/hello.component';
     ParentComponent,
     ChildComponent,
     HelloComponent,
+    PairsComponent,
+    AsyncComponent,
   ],
   exports: [
     HomeComponent,

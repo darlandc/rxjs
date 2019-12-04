@@ -1,21 +1,23 @@
-import { Component, OnInit, ViewChild, AfterViewInit, Input } from '@angular/core';
+import { Component, AfterViewInit, Input, ViewChildren, QueryList } from '@angular/core';
+import { HelloComponent } from '../hello/hello.component';
 
 @Component({
   selector: 'app-parent',
   templateUrl: './parent.component.html',
   styleUrls: ['./parent.component.sass']
 })
-export class ParentComponent implements OnInit  {
+export class ParentComponent implements AfterViewInit  {
+
+  name = 'Rick Sanchez';
   
-  @Input() name: string;
-  message:string;
-  parentMessage = "message from parent";
+  @ViewChildren(HelloComponent) hellos: QueryList<any>;
 
   constructor() { }
 
-  ngOnInit() {
-    let name = "Morty";
-    this.name = name;
-    console.log(name);
-  }
+  ngAfterViewInit() {
+
+    this.hellos.forEach(hello => console.log(hello));
+
+ }
+
 }
