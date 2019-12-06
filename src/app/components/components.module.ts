@@ -14,6 +14,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HelloComponent } from './hello/hello.component';
 import { PairsComponent } from './pairs/pairs.component';
 import { AsyncComponent } from './async/async.component';
+import { Login1Component } from './login1/login1.component';
+import { ApiService } from '../services/api.service';
+import { CustomerService } from '../services/customer.service';
+import { AuthGuardService } from '../guards/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -28,6 +32,7 @@ import { AsyncComponent } from './async/async.component';
     HelloComponent,
     PairsComponent,
     AsyncComponent,
+    Login1Component
   ],
   exports: [
     HomeComponent,
@@ -38,6 +43,11 @@ import { AsyncComponent } from './async/async.component';
     MaterialModule,
     FormsModule,
     ReactiveFormsModule,
+  ],
+  providers: [
+    ApiService,
+    CustomerService,
+    AuthGuardService
   ]
 })
 export class ComponentsModule { }

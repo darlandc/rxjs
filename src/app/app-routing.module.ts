@@ -12,10 +12,13 @@ import { ComponentsModule } from './components/components.module';
 import { HelloComponent } from './components/hello/hello.component';
 import { PairsComponent } from './components/pairs/pairs.component';
 import { AsyncComponent } from './components/async/async.component';
+import { Login1Component } from './components/login1/login1.component';
+import { AuthGuardService } from './guards/auth-guard.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'constructor', component: ConstructorComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'constructor', component: ConstructorComponent, canActivate: [AuthGuardService]},
   { path: 'events', component: EventsComponent },
   { path: 'observable', component: ObservableComponent },
   { path: 'subscribing', component: SubscribingComponent },
@@ -24,7 +27,8 @@ const routes: Routes = [
   { path: 'pairs', component: PairsComponent},
   { path: 'child', component: ChildComponent},
   { path: 'hello', component: HelloComponent},
-  { path: 'async', component: AsyncComponent}
+  { path: 'async', component: AsyncComponent},
+  { path: 'login1', component: Login1Component }
 ];
 
 @NgModule({
