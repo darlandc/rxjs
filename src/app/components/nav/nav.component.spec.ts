@@ -1,7 +1,8 @@
+import { MaterialModule } from './../../material.module';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { NavComponent } from './nav.component';
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('NavComponent', () => {
   let component: NavComponent;
@@ -10,7 +11,8 @@ describe('NavComponent', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ NavComponent ],
-      imports: [CUSTOM_ELEMENTS_SCHEMA]
+      imports: [ MaterialModule ],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA]
     })
     .compileComponents();
   }));

@@ -1,3 +1,6 @@
+import { Router } from '@angular/router';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { FormsModule } from '@angular/forms';
 import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
@@ -11,8 +14,11 @@ describe('Login1Component', () => {
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [ Login1Component ],
-      imports: [ BrowserModule ],
-      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
+      imports: [ BrowserModule, FormsModule, HttpClientTestingModule ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+      providers: [
+        { provide: Router, useValue: 'router'}
+      ]
     })
     .compileComponents();
   }));

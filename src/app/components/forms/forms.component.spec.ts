@@ -1,20 +1,22 @@
-import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ActivatedRoute } from "@angular/router";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from "@angular/core";
+import { BrowserModule } from "@angular/platform-browser";
+import { async, ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { FormsComponent } from './forms.component';
+import { FormsComponent } from "./forms.component";
 
-describe('FormsComponent', () => {
+describe("FormsComponent", () => {
   let component: FormsComponent;
   let fixture: ComponentFixture<FormsComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FormsComponent ],
-      imports: [BrowserModule],
-      schemas: [ CUSTOM_ELEMENTS_SCHEMA]
-    })
-    .compileComponents();
+      declarations: [FormsComponent],
+      imports: [BrowserModule, FormsModule, ReactiveFormsModule],
+      schemas: [CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA],
+      providers: [{ provide: ActivatedRoute, useValue: "router" }],
+    }).compileComponents();
   }));
 
   beforeEach(() => {
@@ -23,7 +25,7 @@ describe('FormsComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it("should create", () => {
     expect(component).toBeTruthy();
   });
 });
