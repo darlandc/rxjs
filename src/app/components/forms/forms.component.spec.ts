@@ -1,3 +1,4 @@
+import { Observable, of } from 'rxjs';
 import { ActivatedRoute } from "@angular/router";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { CUSTOM_ELEMENTS_SCHEMA, NO_ERRORS_SCHEMA } from "@angular/core";
@@ -26,6 +27,9 @@ describe("FormsComponent", () => {
   });
 
   it("should create", () => {
+    const route = TestBed.get(ActivatedRoute);
+    // spyOn(route, 'url').and.returnValue(of(Observable));
+    console.log(route.url, 'test');
     expect(component).toBeTruthy();
   });
 });

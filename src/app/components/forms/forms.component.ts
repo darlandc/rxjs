@@ -20,9 +20,9 @@ inputForm: FormGroup;
     });
     this.logInputChange();
 
-    this.activatedRoute.url.subscribe(url => console.log('The URL changed to: ' + url));
+   // this.activatedRoute.url.subscribe(url => console.log('The URL changed to: ' + url));
 
-    
+
   }
 
   logInputChange() {
