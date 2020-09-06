@@ -1,3 +1,5 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/compiler/src/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { FormsComponent } from './forms.component';
@@ -8,7 +10,9 @@ describe('FormsComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ FormsComponent ]
+      declarations: [ FormsComponent ],
+      imports: [BrowserModule],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA]
     })
     .compileComponents();
   }));

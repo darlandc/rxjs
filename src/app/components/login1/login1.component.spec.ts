@@ -1,3 +1,5 @@
+import { CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { Login1Component } from './login1.component';
@@ -8,7 +10,9 @@ describe('Login1Component', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ Login1Component ]
+      declarations: [ Login1Component ],
+      imports: [ BrowserModule ],
+      schemas: [ CUSTOM_ELEMENTS_SCHEMA ]
     })
     .compileComponents();
   }));
